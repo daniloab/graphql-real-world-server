@@ -1,6 +1,6 @@
-# tiny-koa-graphql
+# GraphQL - Real World Server
 
-Tiny koa GraphQL implementation using Webpack
+Server from the talk GraphQL - Real World did on Paraiba.js
 
 ## How to run
 

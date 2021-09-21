@@ -14,16 +14,17 @@ const router = new Router();
 app.use(bodyParser());
 app.use(convert(cors({ maxAge: 86400, credentials: true })));
 
-router.get('/', ctx => {
+router.get("/", (ctx) => {
   const info = [
-    '/graphql - GraphiQL',
-    '/playground - GraphQL Playground',
-    '/status - Status server'
-  ]
+    "/graphql - GraphiQL",
+    "/playground - GraphQL Playground",
+    "/status - Status server",
+  ];
 
   ctx.status = 200;
-  ctx.body = info.join('\n');
-})
+  ctx.body = info.join("\n");
+});
+
 router.get("/status", (ctx) => {
   ctx.status = 200;
   ctx.body = "running";
