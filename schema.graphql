@@ -8,6 +8,14 @@ input CreateUserInput {
   name: String
 }
 
+type Like {
+  count: String!
+}
+
+type LikeNewPayloadType {
+  like: Like
+}
+
 type Mutation {
   """Create a new user"""
   CreateUser(input: CreateUserInput): User
@@ -19,6 +27,10 @@ type Query {
   user(id: ID!): User
   talks: [Talk]
   talk(id: ID!): Talk
+}
+
+type Subscription {
+  LikeNew: LikeNewPayloadType
 }
 
 type Talk {
