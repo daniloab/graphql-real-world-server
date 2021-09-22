@@ -14,11 +14,20 @@ const CreateUserInputType = new GraphQLInputObjectType({
   }),
 });
 
+const CreateUserPayloadType = new GraphQLObjectType({
+  name: "CreateUserPayload",
+  fields: () => ({
+    user: {
+      type: UserType,
+    },
+  }),
+});
+
 export const MutationType = new GraphQLObjectType({
   name: "Mutation",
   fields: () => ({
     CreateUser: {
-      type: UserType,
+      type: CreateUserPayloadType,
       description: "Create a new user",
       args: {
         input: {
