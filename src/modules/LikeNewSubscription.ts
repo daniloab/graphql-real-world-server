@@ -16,7 +16,7 @@ const LikeNewSubscription = {
   type: LikeNewPayload,
   args: {},
   subscribe: (input, context) => {},
-  getPayload: () => ({}),
+  resolve: () => ({}),
 };
 
 export default LikeNewSubscription;
