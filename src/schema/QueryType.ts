@@ -46,6 +46,12 @@ export const QueryType = new GraphQLObjectType<
       type: GraphQLString,
       resolve: () => version,
     },
+    me: {
+      type: UserType,
+      resolve: () => ({
+        ...speaker,
+      }),
+    },
     users: {
       type: GraphQLList(UserType),
       resolve: (_) => {

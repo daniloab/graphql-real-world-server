@@ -13,7 +13,7 @@ type CreateUserPayload {
 }
 
 type Like {
-  count: String!
+  count: Int!
 }
 
 type LikeNewPayload {
@@ -27,6 +27,7 @@ type Mutation {
 
 type Query {
   version: String
+  me: User
   users: [User]
   user(id: ID!): User
   talks: [Talk]

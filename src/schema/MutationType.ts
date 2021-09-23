@@ -36,7 +36,9 @@ export const MutationType = new GraphQLObjectType({
       },
       resolve: (_, args) => {
         return {
-          name: args.name,
+          user: {
+            name: args.input.name,
+          },
         };
       },
     },
