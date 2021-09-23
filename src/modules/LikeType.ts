@@ -1,10 +1,10 @@
-import { GraphQLNonNull, GraphQLObjectType, GraphQLString } from "graphql";
+import { GraphQLNonNull, GraphQLObjectType, GraphQLInt } from "graphql";
 
 export const LikeType = new GraphQLObjectType({
   name: "Like",
   fields: () => ({
     count: {
-      type: GraphQLNonNull(GraphQLString),
+      type: GraphQLNonNull(GraphQLInt),
       resolve: (obj) => obj.count,
     },
   }),
