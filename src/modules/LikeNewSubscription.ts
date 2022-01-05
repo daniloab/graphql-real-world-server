@@ -1,5 +1,6 @@
 import { GraphQLObjectType } from "graphql";
 import LikeType from "./LikeType";
+import pubSub, {EVENTS} from "../pubSub";
 
 const LikeNewPayload = new GraphQLObjectType({
   name: "LikeNewPayload",
@@ -15,8 +16,15 @@ const LikeNewSubscription = {
   name: "LikeNew",
   type: LikeNewPayload,
   args: {},
-  subscribe: (input, context) => {},
-  resolve: () => ({}),
+  // eslint-disable-next-line
+  subscribe: (input, context) => {
+    return pubSub.asyncIterator(EVENTS.LIKE.NEW);
+  },
+  resolve: (obj) => {
+    return {
+      id: obj.like.id,
+    }
+  },
 };
 
 export default LikeNewSubscription;
