@@ -44,7 +44,7 @@
     "webpack-merge": "5.8.0",
     "webpack-node-externals": "3.0.0",
     "typescript": "4.9.3",
-    "graphql-subscriptions": "^1.1.0"
+    "graphql-subscriptions": "^2.0.0"
   },
   "license": "MIT",
   "main": "index.js",
